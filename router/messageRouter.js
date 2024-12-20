@@ -6,7 +6,8 @@ const router = express.Router();
 // send message
 router.post("/send", sendMessage);
 // getallmeassage
-router.get("/getallmessage",isAdminAuthenticated, getAllMessages);
+// router.get("/getallmessage",isAdminAuthenticated, getAllMessages);
+router.get("/getallmessage", getAllMessages);
 // delete-Messages
 router.delete("/delete-message/:id",deleteMessage);
 
