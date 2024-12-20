@@ -20,7 +20,7 @@ router.get("/admin/get",isAdminAuthenticated,getUserDetails);
 router.get("/patient/get",getUserDetails);
 // Admin logout
 // router.get("/admin/logout",isAdminAuthenticated,logoutAdmin);
-router.get("/admin/logout",isAdminAuthenticated,logoutAdmin);
+router.get("/admin/logout",logoutAdmin);
 // Patient logout
 // router.get("/patient/logout",isPatientAuthenticated,logoutPatient);
 router.get("/patient/logout",logoutPatient);
