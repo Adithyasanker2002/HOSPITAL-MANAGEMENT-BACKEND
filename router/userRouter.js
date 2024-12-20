@@ -15,12 +15,12 @@ router.post("/admin/addnew",addNewAdmin);
 router.get("/doctors",getAllDoctors);
 // get user details
 // router.get("/admin/get",isAdminAuthenticated,getUserDetails);
-router.get("/admin/get",getUserDetails);
+router.get("/admin/get",isAdminAuthenticated,getUserDetails);
 // router.get("/patient/get",isPatientAuthenticated,getUserDetails);
 router.get("/patient/get",getUserDetails);
 // Admin logout
 // router.get("/admin/logout",isAdminAuthenticated,logoutAdmin);
-router.get("/admin/logout",logoutAdmin);
+router.get("/admin/logout",isAdminAuthenticated,logoutAdmin);
 // Patient logout
 // router.get("/patient/logout",isPatientAuthenticated,logoutPatient);
 router.get("/patient/logout",logoutPatient);

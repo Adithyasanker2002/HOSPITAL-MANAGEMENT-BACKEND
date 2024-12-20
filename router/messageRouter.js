@@ -4,10 +4,10 @@ import { isAdminAuthenticated } from "../middlewares/auth.js";
 const router = express.Router();
 
 // send message
-router.post("/send", sendMessage);
+router.post("/send",sendMessage);
 // getallmeassage
 // router.get("/getallmessage",isAdminAuthenticated, getAllMessages);
-router.get("/getallmessage", getAllMessages);
+router.get("/getallmessage",getAllMessages);
 // delete-Messages
 router.delete("/delete-message/:id",deleteMessage);
 
