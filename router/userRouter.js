@@ -9,24 +9,24 @@ router.post("/patient/register", patientRegister);
 // login
 router.post("/login",login);
 // add new admin
-// router.post("/admin/addnew",isAdminAuthenticated,addNewAdmin);
-router.post("/admin/addnew",addNewAdmin);
+router.post("/admin/addnew",isAdminAuthenticated,addNewAdmin);
+
 // get all doctors
 router.get("/doctors",getAllDoctors);
 // get user details
-// router.get("/admin/get",isAdminAuthenticated,getUserDetails);
 router.get("/admin/get",isAdminAuthenticated,getUserDetails);
-// router.get("/patient/get",isPatientAuthenticated,getUserDetails);
-router.get("/patient/get",getUserDetails);
+
+router.get("/patient/get",isPatientAuthenticated,getUserDetails);
+
 // Admin logout
-// router.get("/admin/logout",isAdminAuthenticated,logoutAdmin);
-router.get("/admin/logout",logoutAdmin);
+router.get("/admin/logout",isAdminAuthenticated,logoutAdmin);
+
 // Patient logout
-// router.get("/patient/logout",isPatientAuthenticated,logoutPatient);
-router.get("/patient/logout",logoutPatient);
+router.get("/patient/logout",isPatientAuthenticated,logoutPatient);
+
 // Add New Doctor
-// router.post("/doctor/addnew",isAdminAuthenticated,addNewDoctor);
-router.post("/doctor/addnew",addNewDoctor);
+router.post("/doctor/addnew",isAdminAuthenticated,addNewDoctor);
+
 // delete Doctor
 router.delete("/delete-doctor/:id",deleteDoctor);
 
