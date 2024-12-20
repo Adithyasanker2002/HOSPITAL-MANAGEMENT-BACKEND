@@ -8,6 +8,7 @@ import messageRouter from './router/messageRouter.js'
 import {errorMiddleware} from './middlewares/errorMiddleware.js'
 import userRouter from "./router/userRouter.js";
 import appointmentRouter from './router/appointmentRouter.js'
+import cloudinary from "cloudinary";
 
 const app = express()
 config({path:'./.env'})
@@ -32,6 +33,16 @@ app.use(
   app.use(messageRouter);
   app.use(userRouter);
   app.use(appointmentRouter);
+  cloudinary.v2.config({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
+    });
+  
+  app.listen(process.env.PORT,()=>{
+      console.log(`Server running on ${process.env.PORT}`);
+      
+  })
  
 
 dbConnection()
