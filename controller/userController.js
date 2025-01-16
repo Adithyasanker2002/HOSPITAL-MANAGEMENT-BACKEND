@@ -248,5 +248,11 @@ export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
     });
   });
 
+  // test appointment
+
+  // controllers/userController.js
+
+
+
 
 

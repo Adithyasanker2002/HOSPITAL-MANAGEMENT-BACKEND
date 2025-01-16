@@ -125,3 +125,49 @@ export const deleteAppointment = catchAsyncErrors(async (req, res, next) => {
       message: "Appointment Deleted!",
     });
   });
+
+  // 
+
+//   export const  userAppointment= catchAsyncErrors(async (req, res) => {
+//     const patientId = req.body.patientId; 
+//     // Assuming patientId is stored in session
+//     // console.log(patientId);
+//     const appointments = await Appointment.find({ patientId });
+//     console.log(appointments);
+    
+    
+
+//     if (!patientId) {
+//         return res.status(401).json({ error: 'User  not logged in' });
+//     }
+
+//     try {
+        
+//         res.json(appointments);
+//         console.log(appointments);
+        
+//     } catch (error) {
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// });
+
+
+// 
+export const userAppointments = catchAsyncErrors(async (req, res, next) => {
+  const  {email}  = req.params;
+  const appointment = await Appointment.find({email});
+  console.log(appointment);
+
+ 
+  
+  if (!appointment) {
+    return next(new ErrorHandler("Appointment Not Found!", 404));
+  }
+  // await appointment.find()
+  // console.log(appointment);
+  
+  res.status(200).json({
+    success: true,
+    appointment,
+  });
+});
